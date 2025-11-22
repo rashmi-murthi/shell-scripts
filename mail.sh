@@ -3,6 +3,9 @@
 sudo apt-get update 
 sudo apt-get install -y msmtp msmtp-mta ca-certificates mailutils
 
+# Create msmtp configuartion directory
+mkdir -p ~/.msmtp
+
 # Create msmtp config file in home directory
 cat <<EOF > ~/.msmtprc
 # Set default values for all accounts
@@ -18,7 +21,7 @@ host           smtp.gmail.com
 port           587
 from           rashmi.pmurthi20@gmail.com
 user           rashmi.pmurthi20@gmail.com
-password       jzfvldaefqzooukf
+password       ffmhwicxoybdsoib
 
 # Set default account
 account default : gmail
@@ -28,8 +31,8 @@ EOF
 chmod 600 ~/.msmtprc
 
 # Create msmtp log file and set permissions
-touch ~/.msmtp.log
-chmod 600 ~/.msmtp.log
+touch ~/.msmtp/msmtp.log
+chmod 600 ~/.msmtp/msmtp.log
 
 echo "msmtp configuration completed. You can now send emails using the configured Gmail account."
 
