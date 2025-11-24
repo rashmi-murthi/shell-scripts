@@ -21,8 +21,8 @@ if [[ "$dockerStatus" != "active" ]]; then
     echo "Docker is not active — sent email alert."
 
     # Attempt to restart Docker
-    systemctl restart docker
-    sleep 3
+    sudo systemctl restart docker
+    sleep 10
 
     # Refresh the date and recheck Docker status
     restartTime=$(date)
